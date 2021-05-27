@@ -1,0 +1,39 @@
+<ng-template #elseBlock>
+    <h1>There are no products yet</h1>
+</ng-template>
+<div class="row" *ngIf="products.length > 0; else elseBlock">
+    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 mb-3" *ngFor="let product of products">
+        <div class="card mb-3 text-center">
+            <div class="card-header">
+                <h3>{{product.name}}</h3>
+                <h3>{{product.description}}</h3>
+                <h3>{{product.price}}</h3>
+            </div>
+            <div class="card-body">
+                <button class="btn btn-warning" (click)="deleteProduct(product)">delete</button>
+                <button class="btn btn-info" (click)="editProduct(product)">edit</button>
+
+                <div *ngIf="editing && editingProduct.id == product.id">
+                    <form>
+                        <div class="mb-3">
+                            <label for="name">Product name</label>
+                            <input type="text" class="form-control" [(ngModel)]="editingProduct.name" name="name" id="name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="description">Product description</label>
+                            <input type="text" class="form-control" [(ngModel)]="editingProduct.description" name="description" id="description" >
+                        </div>
+                        <div class="mb-3">
+                            <label for="price">Product price</label>
+                            <input type="number" class="form-control" [(ngModel)]="editingProduct.price" step="0.01" name="price" id="price">
+                        </div>
+                        <button class="btn btn-success btn-lg" (click)="updateProduct()">update</button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    
+</div>
+<!-- min40:25 -->

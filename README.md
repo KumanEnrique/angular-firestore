@@ -1,3 +1,12 @@
+#comandos
+
+npm i bootswatch firebase
+ng add @angular/fire
+ng g c components/navigator
+ng g c components/product-form
+ng g c components/products
+ng g s services/product
+
 # AngularFirestoreApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.12.

@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "miniproyectos-propios": {
+      "hosting": {
+        "angular-firestore-app": [
+          "miniproyectos-propios"
+        ]
+      }
+    }
+  }
+}
